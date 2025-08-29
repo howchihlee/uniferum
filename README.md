@@ -9,7 +9,13 @@
 
 ---
 ## Overview
-TBD
+Uniferum is a volumetric vision-language model designed for radiology. Uniferum integrates classification labels and segmentation masks into a single unified training framework.
+
+- Harmonizes classification and segmentation across multiple CT datasets.
+- Improves State-of-the-Art Results on the CT-RATE benchmark by +7% compared to CLIP-based models.
+- Robust out-of-distribution performance
+- zero-shot capabilities on RAD-CHEST and INSPECT datasets.
+
 ---
 ## Citation
 
