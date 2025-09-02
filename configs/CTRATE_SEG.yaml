@@ -27,12 +27,6 @@ vision_args:
   model_class: EfficientNetViT
   nhead: 8
   seqlen: 258
-lora_args:
-  r: 8
-  lora_alpha: 16
-  lora_dropout: 0.1
-  bias: "none"
-  task_type: "FEATURE_EXTRACTION"
 predict_transform:
   - constant_values: 0.0
     name: SpatialPad

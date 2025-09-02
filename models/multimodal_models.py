@@ -15,14 +15,10 @@ def setup_llm(llm_config, lora_config=None):
     model = llm_module.from_pretrained(
         llm_config["model_id"],
     )
-    # if llm_config.get("embedding_only", False):
-    #    return EmbedOnlyModel(model)
-
+    
     if llm_config.get("bert_encoder_layers", None):
         n_layers = llm_config["bert_encoder_layers"]
         model.encoder.layer = model.encoder.layer[:n_layers]
-        return model
-        # return BertEncoderModel(model, n_layers)
 
     if lora_config is not None:
         lora_config = LoraConfig(**lora_config)
@@ -116,7 +112,6 @@ class Uniferum(BertModel):
         input_ids: torch.LongTensor = None,
         attention_mask: Optional[torch.Tensor] = None,
         position_ids: Optional[torch.LongTensor] = None,
-        # past_key_values: Optional[Union[Cache, List[torch.FloatTensor]]] = None,
         inputs_embeds: Optional[torch.FloatTensor] = None,
         labels: Optional[torch.LongTensor] = None,
         images=None,
